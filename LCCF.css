@@ -65,6 +65,10 @@ button.donation {
     color: white;
     height: 30em;
 }
+.values {
+    list-style-type: none;
+    font-weight: 400;
+}
 
 /* Projects */
 .prosec {
