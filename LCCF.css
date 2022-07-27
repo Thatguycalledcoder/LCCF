@@ -3,12 +3,24 @@
 }
 body {
     width: 100%;
+    scroll-behavior: smooth;
 }
-
+::-webkit-scrollbar {
+    accent-color: var(--LCCF-blue);
+    visibility: hidden;
+}
 /* Header */
 .collapser {
     background-color: var(--LCCF-blue);
     margin: 5px;
+}
+nav.navbar .navbar-toggler-icon {
+    padding-top: 4px;
+    color: white;
+}
+.logo {
+    width: 45px;
+    height: auto;
 }
 .navigate {
     width: 28rem;
@@ -30,6 +42,10 @@ body {
 }
 button.donation {
     border: none;
+    transition: all ease-in-out 0.3s;
+}
+button.donation:hover {
+    background-color: #1868e0;
 }
 .landing {
     max-width: 100%;
@@ -60,14 +76,25 @@ button.donation {
 }
 
 /* Who we are */
+.statements {
+    display: flex;
+    justify-content: space-evenly;
+}
 .who {
     background-color: var(--LCCF-blue);
     color: white;
     height: 30em;
+    width: 500px;
+    transition: all ease-in-out 0.3s;
+}
+.who:hover {
+    background-color: #1868e0;
+    transform: scale(1.1);
 }
 .values {
     list-style-type: none;
     font-weight: 400;
+    padding-left: 0px;
 }
 
 /* Projects */
@@ -141,6 +168,40 @@ ul.list-group li.list-group-item {
 .cmy-sponsors {
     margin-block: 15px;
 }
+
+/* Donations modal */
+.donations {
+    list-style-type: none;
+}
+ul.donations li {
+    border: 1px solid black;
+    height: 100px;
+    padding-top: 25px;
+}
+ul.donations li a {
+    text-decoration: none;
+    color: black;
+}
+ul.donations li:hover {
+    background-color: rgb(235, 235, 235);
+}
+.grid-display {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin-block: 8px;
+}
+.grid-display img {
+    width: 200px;
+    height: 150px;
+    column-gap: 5px;
+}
+.modal-content{
+    width: 50vw;
+}
+.modal-logo {
+    width: 5%;
+    height: auto;
+}
 /* ::-webkit-scrollbar {
     accent-color: lightblue;
 } */
@@ -148,9 +209,22 @@ ul.list-group li.list-group-item {
 /* Responsive design */
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+    .landing {
+        height: 20em;
+    }
+    .statements {
+        flex-direction: column;
+        flex-grow: 1;
+        align-items: center;
+    }
+    .who {
+        height: 25em;
+        width: 300px;
+        margin-block: 3px;
+    }
     .who-logos {
-        width: 90px;
-        height: 90px;
+        width: 80px;
+        height: 80px;
     }
     .org {
         font-size: 1.4em;
@@ -193,54 +267,71 @@ ul.list-group li.list-group-item {
     .sponsors {
         font-size: 14px;
     }
+    div.who .statements {
+        flex-direction: row;
+    }
+    .modal-content {
+        width: 100vw;
+    }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
+    .who {
+        height: 30em;
+        width: 300px;
+        margin-inline: 5px;
+        font-size: 14px;
+    }
     .who-logos {
         width: 100px;
         height: 100px;
     }
-
+    div .who-logos .statements .values{
+        justify-content: space-between;
+        font-size: 8px;
+    }
     .projecto {
         width: 25rem;
     }
-
     .image-sec {
         height: 170px;
         width: 100%;
     }
-
     .about-content {
         height: 19rem;
     }
-
     .founder-img {
         width: 18em;
     }
-
     .logos {
         width: 160px;
+    }
+    .modal-content {
+        width: 70vw;
     }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
+    .who {
+        width: 500px;
+    }
     .who-logos {
         width: 125px;
         height: 125px;
     }
-
     .values {
         font-size: 14px;
     }
-
     .cards {
         line-height: 1.5em;
     }
-
     .founder-img {
         width: 24em;
         height: 22em;
+    }
+    .modal-content {
+        width: 50vw;
     }
 }
